@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="farm-produce-shop">
+    <CLASSES>
+      <root url="file://D:/java/farm-produce-shop" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://D:/java/farm-produce-shop" recursive="false" />
+  </library>
+</component>
