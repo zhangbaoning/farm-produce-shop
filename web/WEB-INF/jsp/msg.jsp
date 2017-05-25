@@ -1,4 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ page contentType="text/html;charset=utf-8" language="java" %>
 <%--
   Created by IntelliJ IDEA.
   User: zhangbaoning
@@ -9,10 +10,11 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>信息</title>
 </head>
 <body>
 <s:actionmessage/>
 <s:actionerror/>
+<a href="index.action">主页</a>
 </body>
 </html>

@@ -21,4 +21,23 @@ public class UserDao extends HibernateDaoSupport {
     public void regiter(User user){
         this.getHibernateTemplate().save(user);
     }
+    public User findByCode(String code){
+        String hql="from User where state=0 and code=?";
+        List<User> list = this.getHibernateTemplate().find(hql,code);
+        if (list!=null&&list.size()>0){
+            return list.get(0);
+        }else
+            return null;
+    }
+    public void update(User user){
+        this.getHibernateTemplate().update(user);
+    }
+    public User findBylogin(String username,String password){
+        String hql = "from User where username=? and password=?";
+        List<User> list = this.getHibernateTemplate().find(hql,username,password);
+        if (list!=null&& list.size()>0){
+            return list.get(0);
+        }else
+        return null;
+    }
 }

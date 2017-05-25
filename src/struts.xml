@@ -14,8 +14,9 @@
         </action>
         <action name="user_*" class="userAction" method="{1}">
             <result name="registerPage">WEB-INF/jsp/registerPage.jsp</result>
+            <result name="loginPage">WEB-INF/jsp/loginPage.jsp</result>
             <result name="input">WEB-INF/jsp/registerPage.jsp</result>
-            <result>index.jsp</result>
+            <result type="redirect">index.action</result>
         </action>
     </package>
     <constant name="struts.devMode" value="true"/>

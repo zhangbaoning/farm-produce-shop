@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: zhangbaoning
@@ -6,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<s:debug/>
 <div class="span5">
     <div class="logo">
         <a href="./网上商城/index.htm">
@@ -21,16 +23,22 @@
 <div class="span10 last">
     <div class="topNav clearfix">
         <ul>
+            <s:if test="#session.user==null">
             <li id="headerLogin" class="headerLogin" style="display: list-item;">
-                <a href="./会员登录.htm">登录</a>|
+                <a href="${pageContext.request.contextPath}/user_loginPage.action">登录</a>|
             </li>
             <li id="headerRegister" class="headerRegister" style="display: list-item;">
                 <a href="${pageContext.request.contextPath}/user_registerPage.action">注册</a>|
             </li>
-            <li id="headerUsername" class="headerUsername"></li>
-            <li id="headerLogout" class="headerLogout">
-                <a>[退出]</a>|
+            </s:if>
+            <s:else>
+            <li id="headerUsername">
+                <s:property value="#session.user.username"/>
             </li>
+            <li id="headerLogout">
+                <a href="user_logout.action">[退出]</a>|
+            </li>
+            </s:else>
             <li>
                 <a>会员中心</a>
                 |

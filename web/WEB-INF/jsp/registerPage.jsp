@@ -1,4 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="S" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: zhangbaoning
@@ -13,6 +14,10 @@
     <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/css/register.css" rel="stylesheet" type="text/css"/>
     <script>
+        function changecheck() {
+            var img = document.getElementById("captchaImage");
+            img.src= "${pageContext.request.contextPath}/checkcode.jpg?"+new Date().getTime();
+        }
         function checkUsername() {
             // 获得文件框值:
             var username = document.getElementById("username").value;
@@ -77,7 +82,8 @@
                                 <span class="requiredField">*</span>用户名:
                             </th>
                             <td>
-                                <input type="text" id="username" name="username" class="text" maxlength="20" onblur="checkUsername()">
+                                <input type="text" id="username" name="username" class="text" maxlength="20"
+                                       onblur="checkUsername()">
                             </td>
                             <span id="span1"></span>
                         </tr>
@@ -95,7 +101,7 @@
                                 <span class="requiredField">*</span>确认密码:
                             </th>
                             <td>
-                                <input type="password"  class="text" maxlength="20" autocomplete="off">
+                                <input type="password" class="text" maxlength="20" autocomplete="off">
                             </td>
                         </tr>
                         <tr>
@@ -132,20 +138,20 @@
                                 <input type="text" name="addr" class="text" maxlength="200">
                             </td>
                         </tr>
-                        <%--<tr>
+                        <tr>
                             <th>
                                 <span class="requiredField">*</span>验证码:
                             </th>
                             <td>
 										<span class="fieldSet">
 											<input type="text" id="captcha" name="captcha" class="text captcha"
-                                                   maxlength="4" autocomplete="off"><img id="captchaImage"
+                                                   maxlength="6" autocomplete="off"><img id="captchaImage"
                                                                                          class="captchaImage"
-                                                                                         src="${pageContext.request.contextPath}/image/captcha.jhtml"
-                                                                                         title="点击更换验证码">
+                                                                                         src="${pageContext.request.contextPath}/checkcode.jpg"
+                                                                                         title="点击更换验证码" onclick="changecheck()">
 										</span>
                             </td>
-                        </tr>--%>
+                        </tr>
                         <tr>
                             <th>&nbsp;
 
@@ -239,6 +245,7 @@
         </div>
     </div>
 </div>
+<S:actionerror/>
 <div class="container footer">
     <div class="span24">
         <div class="footerAd">

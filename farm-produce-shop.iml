@@ -41,5 +41,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="farm-produce-shop" level="project" />
     <orderEntry type="library" name="Tomcat" level="project" />
+    <orderEntry type="library" name="kaptcha-2.3" level="project" />
   </component>
 </module>

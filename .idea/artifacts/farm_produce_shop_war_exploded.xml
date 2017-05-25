@@ -9,6 +9,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="farm-produce-shop" />
+          <element id="library" level="project" name="kaptcha-2.3" />
         </element>
       </element>
     </root>

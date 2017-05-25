@@ -9,7 +9,7 @@
     </filter>
     <filter-mapping>
         <filter-name>struts2</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>*.action</url-pattern>
     </filter-mapping>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -18,4 +18,12 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:spring.xml</param-value>
     </context-param>
+    <servlet>
+        <servlet-name>kaptcha</servlet-name>
+        <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>kaptcha</servlet-name>
+        <url-pattern>/checkcode.jpg</url-pattern>
+    </servlet-mapping>
 </web-app>

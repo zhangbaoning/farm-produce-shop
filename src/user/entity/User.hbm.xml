@@ -5,7 +5,9 @@
 <hibernate-mapping>
 
     <class name="user.entity.User" table="user" schema="farm_produce_shop">
-        <id name="uid" column="uid"/>
+        <id name="uid" column="uid">
+            <generator class="native"/>
+        </id>
         <property name="username" column="username"/>
         <property name="password" column="password"/>
         <property name="name" column="name"/>
