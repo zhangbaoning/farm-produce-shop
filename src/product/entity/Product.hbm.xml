@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="product.entity.Product" table="product" schema="farm_produce_shop">
+        <id name="pid" column="pid"/>
+        <property name="pname" column="pname"/>
+        <property name="marketPrice" column="market_price"/>
+        <property name="shopPrice" column="shop_price"/>
+        <property name="image" column="image"/>
+        <property name="pdesc" column="pdesc"/>
+        <property name="isHot" column="is_hot"/>
+        <property name="pdate" column="pdate"/>
+    </class>
+</hibernate-mapping>

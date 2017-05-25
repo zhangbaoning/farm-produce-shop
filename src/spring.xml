@@ -33,20 +33,48 @@
         <property name="mappingResources">
             <list>
                 <value>user/entity/User.hbm.xml</value>
+                <value>category/entity/Category.hbm.xml</value>
+                <value>product/entity/Product.hbm.xml</value>
             </list>
         </property>
     </bean>
     <!--ACTION-->
-    <bean id="indexAction" class="index.action.IndexAction" scope="prototype"/>
+    <bean id="indexAction" class="index.action.IndexAction" scope="prototype">
+        <!--一级分类-->
+        <property name="categoryService" ref="categoryService"/>
+        <!--商品-->
+        <property name="productService" ref="productService"/>
+    </bean>
+        <!--User-->
     <bean id="userAction" class="user.action.UserAction" scope="prototype">
         <property name="userService" ref="userService"/>
     </bean>
+
+
     <!--SERVICE-->
+        <!--User-->
     <bean id="userService" class="user.service.UserService">
         <property name="userDao" ref="userDao"/>
     </bean>
+        <!--一级分类-->
+    <bean id="categoryService" class="category.service.CategoryService">
+        <property name="categoryDao" ref="categoryDao"/>
+    </bean>
+        <!--商品-->
+    <bean id="productService" class="product.servcie.ProductService">
+        <property name="productDao" ref="productDao"/>
+    </bean>
     <!--DAO-->
+        <!--User-->
     <bean id="userDao" class="user.dao.UserDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+        <!--一级分类-->
+    <bean id="categoryDao" class="category.dao.CategoryDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+        <!--商品-->
+    <bean id="productDao" class="product.dao.ProductDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
