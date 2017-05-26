@@ -49,9 +49,7 @@
             <ul class="tabContent" style="display: block;">
                 <s:iterator value="hot_list" var="list">
                 <li>
-                    <a target="_blank"><img src="${pageContext.request.contextPath}<s:property value="#list.image"/>"
-                                            style="display: block;"></a>
-
+                    <a href="${pageContext.request.contextPath}/product_getById.action?pid=<s:property value="#list.pid"/> " target="_blank"><img src="${pageContext.request.contextPath}<s:property value="#list.image"/>"
                 </li>
                 </s:iterator>
             </ul>
@@ -181,7 +179,7 @@
             <ul class="tabContent" style="display: block;">
                 <s:iterator value="newest_list" var="newst">
                 <li>
-                    <a target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#newst.image"/>"
+                    <a href="${pageContext.request.contextPath}/product_getById.action?pid=<s:property value="#newst.pid"/> " target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#newst.image"/>"
                                             data-original="http://storage.shopxx.net/demo-image/3.0/201301/4a51167a-89d5-4710-aca2-7c76edc355b8-thumbnail.jpg"
                                             style="display: block;"></a></li>
                 </li>

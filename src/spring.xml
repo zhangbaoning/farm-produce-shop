@@ -35,6 +35,7 @@
                 <value>user/entity/User.hbm.xml</value>
                 <value>category/entity/Category.hbm.xml</value>
                 <value>product/entity/Product.hbm.xml</value>
+                <value>category/entity/Categorysecond.hbm.xml</value>
             </list>
         </property>
     </bean>
@@ -48,6 +49,9 @@
         <!--User-->
     <bean id="userAction" class="user.action.UserAction" scope="prototype">
         <property name="userService" ref="userService"/>
+    </bean>
+    <bean id="productAction" class="product.action.ProductAction" scope="prototype">
+        <property name="productService" ref="productService"/>
     </bean>
 
 

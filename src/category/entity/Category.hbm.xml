@@ -7,5 +7,9 @@
     <class name="category.entity.Category" table="category" schema="farm_produce_shop">
         <id name="cid" column="cid"/>
         <property name="cname" column="cname"/>
+        <set name="categorysecondSet"  lazy="false">
+            <key column="cid"/>
+            <one-to-many class="category.entity.Categorysecond"/>
+        </set>
     </class>
 </hibernate-mapping>

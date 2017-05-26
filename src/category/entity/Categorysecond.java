@@ -22,6 +22,15 @@ public class Categorysecond {
     public void setCsname(String csname) {
         this.csname = csname;
     }
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     @Override
     public boolean equals(Object o) {

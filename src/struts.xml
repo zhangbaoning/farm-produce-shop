@@ -18,6 +18,9 @@
             <result name="input">WEB-INF/jsp/registerPage.jsp</result>
             <result type="redirect">index.action</result>
         </action>
+        <action name="product_*" method="{1}" class="productAction">
+            <result name="{1}">/WEB-INF/jsp/details.jsp</result>
+        </action>
     </package>
     <constant name="struts.devMode" value="true"/>
     <constant name="struts.configuration.xml.reload" value="true"/>

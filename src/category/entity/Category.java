@@ -1,14 +1,25 @@
 package category.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by zhangbaoning on 2017/5/25.
  */
 public class Category {
     private int cid;
     private String cname;
-
+    private Set<Categorysecond> categorysecondSet = new HashSet<>();
     public int getCid() {
         return cid;
+    }
+
+    public Set<Categorysecond> getCategorysecondSet() {
+        return categorysecondSet;
+    }
+
+    public void setCategorysecondSet(Set<Categorysecond> categorysecondSet) {
+        this.categorysecondSet = categorysecondSet;
     }
 
     public void setCid(int cid) {

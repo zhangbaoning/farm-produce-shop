@@ -27,4 +27,7 @@ public class ProductDao extends HibernateDaoSupport {
         List<Product> list = this.getHibernateTemplate().findByCriteria(criteria,0,10);
         return list;
     }
+    public Product getById(Integer pid){
+        return this.getHibernateTemplate().get(Product.class,pid);
+    }
 }

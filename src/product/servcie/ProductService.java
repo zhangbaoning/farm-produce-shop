@@ -20,4 +20,7 @@ public class ProductService {
     public List<Product> getNewest(){
         return productDao.getNewest();
     }
+    public Product getById(Integer pid){
+        return productDao.getById(pid);
+    }
 }
