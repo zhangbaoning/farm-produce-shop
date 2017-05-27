@@ -2,6 +2,7 @@ package product.servcie;
 
 import product.dao.ProductDao;
 import product.entity.Product;
+import utils.PageBean;
 
 import java.util.List;
 
@@ -14,13 +15,17 @@ public class ProductService {
     public void setProductDao(ProductDao productDao) {
         this.productDao = productDao;
     }
-    public List<Product> getHot(){
+
+    public List<Product> getHot() {
         return productDao.getHot();
     }
-    public List<Product> getNewest(){
+
+    public List<Product> getNewest() {
         return productDao.getNewest();
     }
-    public Product getById(Integer pid){
+
+    public Product getById(Integer pid) {
         return productDao.getById(pid);
     }
+
 }

@@ -53,7 +53,10 @@
     <bean id="productAction" class="product.action.ProductAction" scope="prototype">
         <property name="productService" ref="productService"/>
     </bean>
-
+    <bean id="categoryAction" class="category.action.CategoryAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+    </bean>
+    <bean id="cateGorysecondAction" class="category.action.CateGorysecondAction"/>
 
     <!--SERVICE-->
         <!--User-->
@@ -63,6 +66,7 @@
         <!--一级分类-->
     <bean id="categoryService" class="category.service.CategoryService">
         <property name="categoryDao" ref="categoryDao"/>
+        <property name="productDao" ref="productDao"/>
     </bean>
         <!--商品-->
     <bean id="productService" class="product.servcie.ProductService">

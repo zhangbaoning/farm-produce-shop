@@ -1,11 +1,25 @@
 package category.entity;
 
+import product.entity.Product;
+
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by zhangbaoning on 2017/5/25.
  */
 public class Categorysecond {
     private int csid;
     private String csname;
+    Set<Product> productSet = new HashSet<Product>();
+
+    public Set<Product> getProductSet() {
+        return productSet;
+    }
+
+    public void setProductSet(Set<Product> productSet) {
+        this.productSet = productSet;
+    }
 
     public int getCsid() {
         return csid;

@@ -69,8 +69,11 @@
             |
         </li>
         <s:iterator value="#session.all_category">
+    <%--    TODO
+            在转向一级分类的时候，要查出二级分类和所有的一级分类的所有产品
+            所以要传的值为一级分类的id--%>
             <li>
-                <a href="./蔬菜分类.htm"><s:property value="cname"/></a>|
+                <a href="${pageContext.request.contextPath}/category_menueDetails.action?cid=<s:property value="cid"/> "><s:property value="cname"/></a>|
             </li>
         </s:iterator>
     </ul>

@@ -13,5 +13,6 @@
         <property name="pdesc" column="pdesc"/>
         <property name="isHot" column="is_hot"/>
         <property name="pdate" column="pdate"/>
+        <many-to-one name="categorysecond" column="csid" class="category.entity.Categorysecond" lazy="false"/>
     </class>
 </hibernate-mapping>

@@ -1,5 +1,7 @@
 package product.entity;
 
+import category.entity.Categorysecond;
+
 import java.sql.Timestamp;
 
 /**
@@ -14,6 +16,15 @@ public class Product {
     private String pdesc;
     private Integer isHot;
     private Timestamp pdate;
+    Categorysecond categorysecond;
+
+    public Categorysecond getCategorysecond() {
+        return categorysecond;
+    }
+
+    public void setCategorysecond(Categorysecond categorysecond) {
+        this.categorysecond = categorysecond;
+    }
 
     public int getPid() {
         return pid;
