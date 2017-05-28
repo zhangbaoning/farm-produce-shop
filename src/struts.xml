@@ -8,6 +8,7 @@
     <package name="shop" namespace="/" extends="struts-default">
         <global-results>
             <result name="msg">WEB-INF/jsp/msg.jsp</result>
+            <result name="menueDetails">WEB-INF/jsp/menueDetails.jsp</result>
         </global-results>
         <action name="index" class="indexAction">
             <result>WEB-INF/jsp/index.jsp</result>
@@ -22,8 +23,11 @@
             <result name="{1}">/WEB-INF/jsp/details.jsp</result>
         </action>
        <action name="category_*" method="{1}" class="categoryAction">
-        <result name="{1}">/WEB-INF/jsp/{1}.jsp</result>
+        <!--<result name="{1}">/WEB-INF/jsp/{1}.jsp</result>-->
        </action>
+        <action name="cateGorysecond_*" method="{1}" class="cateGorysecondAction">
+
+        </action>
     </package>
     <constant name="struts.devMode" value="true"/>
     <constant name="struts.configuration.xml.reload" value="true"/>

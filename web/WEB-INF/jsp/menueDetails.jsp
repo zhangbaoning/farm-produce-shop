@@ -27,7 +27,8 @@
                     </dt>
                     <s:iterator value="#all_category.categorysecondSet" var="second">
                         <dd>
-                            <a><s:property value="#second.csname"/> </a>
+                            <a href="cateGorysecond_getProductByCs.action?csid=<s:property value="#second.csid"/> ">
+                                <s:property value="#second.csname"/></a>
                         </dd>
                     </s:iterator>
                 </dl>
@@ -48,14 +49,15 @@
                     <s:iterator var="product" value="pageBean.list">
                         <li>
                             <a href="${pageContext.request.contextPath}/product_getById.action?pid=<s:property value="#product.pid"/>"/>
-                                <img src="${pageContext.request.contextPath}/<s:property value="#product.image"/> " width="170"
-                                     height="170" style="display: inline-block;">
+                            <img src="${pageContext.request.contextPath}/<s:property value="#product.image"/> "
+                                 width="170"
+                                 height="170" style="display: inline-block;">
 
-                                <span style='color:green'>
+                            <span style='color:green'>
 											 <s:property value="#product.pname"/>
 											</span>
 
-                                <span class="price">
+                            <span class="price">
 												商城价： ￥<s:property value="#product.shopPrice"/>/份
 											</span>
 
@@ -65,13 +67,55 @@
                 </ul>
             </div>
             <div class="pagination">
-                <span class="firstPage">&nbsp;</span>
-                <span class="previousPage">&nbsp;</span>
-                <span class="currentPage">1</span>
-                <a href="javascript: $.pageSkip(2);">2</a>
-                <a class="nextPage" href="javascript: $.pageSkip(2);">&nbsp;</a>
+                <s:if test="pageBean.page!=1">
+                    <s:if test="pageBean.page!=1">
+                        <s:if test="cid!=null">
+                            <a class="firstPage"
+                               href="${pageContext.request.contextPath}/category_menueDetails.action?cid=<s:property value="cid"/>&page=1">&nbsp;</a>
+                            <a class="previousPage"
+                               href="${pageContext.request.contextPath}/category_menueDetails.action?cid=<s:property value="cid"/>&page=<s:property value="pageBean.page-1"/> ">&nbsp;</a>
+                        </s:if>
+                        <s:if test="csid!=null">
+                            <a class="firstPage"
+                               href="${pageContext.request.contextPath}/cateGorysecond_menueDetails.action?csid=<s:property value="cisd"/>&page=1">&nbsp;</a>
+                            <a class="previousPage"
+                               href="${pageContext.request.contextPath}/cateGorysecond_menueDetails.action?csid=<s:property value="csid"/>&page=<s:property value="pageBean.page-1"/> ">&nbsp;</a>
+                        </s:if>
+                    </s:if>
+                </s:if>
+                <s:iterator begin="1" end="pageBean.totalPage" var="i">
 
-                <a class="lastPage" href="javascript: $.pageSkip(2);">&nbsp;</a>
+                    <%--当前页面 不可点击--%>
+                    <s:if test="pageBean.page==#i">
+                        <span class="currentPage"><s:property value="#i"/> </span>
+                    </s:if>
+                    <s:else>
+                        <%--所有页面的图案--%>
+                        <s:if test="cid!=null">
+                            <a href="${pageContext.request.contextPath}/category_menueDetails.action?cid=<s:property value="cid"/>&page=<s:property value="#i"/> "><s:property
+                                    value="#i"/></a>
+                        </s:if>
+                        <s:if test="csid!=null">
+                            <a href="${pageContext.request.contextPath}/cateGorysecond_menueDetails.action?csid=<s:property value="csid"/>&page=<s:property value="#i"/> "><s:property
+                                    value="#i"/></a>
+                        </s:if>
+                    </s:else>
+                </s:iterator>
+                <s:if test="pageBean.page!=pageBean.totalPage">
+                    <s:if test="cid!=null">
+                        <a class="nextPage"
+                           href="${pageContext.request.contextPath}/category_menueDetails.action?cid=<s:property value="cid"/>&page=<s:property value="pageBean.page+1"/> ">&nbsp;</a>
+                        <a class="lastPage"
+                           href="${pageContext.request.contextPath}/category_menueDetails.action?cid=<s:property value="cid"/>&page=<s:property value="pageBean.totalPage"/> ">&nbsp;</a>
+                    </s:if>
+                    <s:if test="csid !=null">
+                        <a class="nextPage"
+                           href="${pageContext.request.contextPath}/cateGorysecond_menueDetails.action?csid<s:property value="csid"/>&page=<s:property value="pageBean.page+1"/> ">&nbsp;</a>
+                        <a class="lastPage"
+                           href="${pageContext.request.contextPath}/cateGorysecond_menueDetails.action?csid<s:property value="csid"/>&page=<s:property value="pageBean.totalPage"/> ">&nbsp;</a>
+
+                    </s:if>
+                </s:if>
             </div>
         </form>
     </div>

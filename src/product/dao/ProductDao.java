@@ -55,5 +55,29 @@ public class ProductDao extends HibernateDaoSupport {
         return list;
     }
 
+    public int getProductCountByCs(int csid) {
+        String hql = "select count (p.pid) from Product p " +
+                "where p.categorysecond.csid=?  ";
+        List<Long> list = this.getHibernateTemplate().find(hql, csid);
+        return list.get(0).intValue();
+    }
+
+    public List getProductByCategorysecond(int csid, int limit, int start) {
+
+        String hql = "select p from Product p join p.categorysecond cs " +
+                "where cs.csid = ?";
+        Object[] objects = new Object[]{csid};
+
+        List list = this.getHibernateTemplate().executeFind(new PageHibernateCallBack(hql, limit, objects, start));
+
+        return list;
+    }
+
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("/spring.xml");
+        ProductDao productDao = (ProductDao) context.getBean("productDao");
+        productDao.getProductByCategorysecond(1,10,0);
+
+    }
 
 }

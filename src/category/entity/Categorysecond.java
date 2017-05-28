@@ -9,6 +9,7 @@ import java.util.Set;
  * Created by zhangbaoning on 2017/5/25.
  */
 public class Categorysecond {
+
     private int csid;
     private String csname;
     Set<Product> productSet = new HashSet<Product>();

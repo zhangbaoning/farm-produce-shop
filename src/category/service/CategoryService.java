@@ -35,11 +35,12 @@ public class CategoryService {
         PageBean pageBean = new PageBean();
         pageBean.setTotalCount(productDao.getProductCount(cid));
         pageBean.setTotalPage((int) Math.ceil(pageBean.getTotalCount() / pageBean.getLimit()));
-        int start = page_number * pageBean.getLimit() + 1;
+        int start = (page_number-1) * pageBean.getLimit() + 1;
         //将得到商品分页返回
         //默认是第一页
         //如果跳页，需要将第几页传入
         List<Product> list = productDao.getProductByCategory(cid, pageBean.getLimit(), start);
+        pageBean.setPage(page_number);
         pageBean.setList(list);
         return pageBean;
     }

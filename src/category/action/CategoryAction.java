@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class CategoryAction extends ActionSupport{
     private int cid;
-    private int page_number;
+    private int page=1;    //初始化在第一页
 
     CategoryService categoryService;
 
@@ -30,14 +30,13 @@ public class CategoryAction extends ActionSupport{
         this.cid = cid;
     }
 
-    public int getPage_number() {
-        return page_number;
+    public int getPage() {
+        return page;
     }
 
-    public void setPage_number(int page_number) {
-        this.page_number = page_number;
+    public void setPage(int page) {
+        this.page = page;
     }
-
 
     @Override
     public String execute() throws Exception {
@@ -46,8 +45,10 @@ public class CategoryAction extends ActionSupport{
         return SUCCESS;
     }
     public String menueDetails(){
-        PageBean pageBean = categoryService.menueDetails(cid,page_number);
+        PageBean pageBean = categoryService.menueDetails(cid,page);
         System.out.println(pageBean.toString());
+        //将cid也保存在值栈中,保证切换页数时有当前参数可传
+        ActionContext.getContext().getValueStack().set("cid",cid);
         ActionContext.getContext().getValueStack().set("pageBean",pageBean);
         return "menueDetails";
     }
