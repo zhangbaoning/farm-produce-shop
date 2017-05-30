@@ -11,6 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <%--需要在struts过滤器中设置dispacher--%>
+  <jsp:forward page="index.action"/>
   </body>
 </html>

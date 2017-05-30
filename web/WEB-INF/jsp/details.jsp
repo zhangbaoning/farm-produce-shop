@@ -11,8 +11,24 @@
 <title>网上商城</title>
 <link href="./css/common.css" rel="stylesheet" type="text/css">
 <link href="./css/product.css" rel="stylesheet" type="text/css">
+<script>
+    function formSubmit() {
+        document.getElementById("submit_cart").submit();
+    }
+    function increaseCount() {  //数量增加
+        var num = document.getElementById("quantity");
+        num.value = parseInt(num.value) + 1;
 
-
+    }
+    function decreaseCount() {  //数量减小
+        var num = document.getElementById("quantity");
+        var num1 = num.getAttribute("value");
+        document.write(num1);
+        if (parseInt(num1)>1){
+        num1 = parseInt(num1) - 1;
+        }
+    }
+</script>
 </head>
 <body>
 <div class="container header">
@@ -22,16 +38,16 @@
     <div class="span6">
         <div class="hotProductCategory">
             <s:iterator value="#session.all_category" var="all_category">
-            <dl>
-                <dt>
-                    <a href="./蔬菜分类.htm"><s:property value="#all_category.cname"/></a>
-                </dt>
-                <s:iterator var="secend_category" value="#all_category.categorysecondSet">
-                <dd>
-                    <a><s:property value="#secend_category.csname"/> </a>
-                </dd>
-                </s:iterator>
-            </dl>
+                <dl>
+                    <dt>
+                        <a href="./蔬菜分类.htm"><s:property value="#all_category.cname"/></a>
+                    </dt>
+                    <s:iterator var="secend_category" value="#all_category.categorysecondSet">
+                        <dd>
+                            <a><s:property value="#secend_category.csname"/> </a>
+                        </dd>
+                    </s:iterator>
+                </dl>
             </s:iterator>
         </div>
 
@@ -90,24 +106,29 @@
             </dl>
         </div>
         <div class="action">
+            <%--TODO 添加提交action--%>
+            <form id="submit_cart" action="cart_addCart.action " method="get">
+                <%--将隐藏的文本框传到表单去--%>
+                <input name="pid" value="<s:property value="model.pid"/>" hidden>
+                <dl class="quantity">
+                    <dt>购买数量:</dt>
+                    <dd>
+                        <input id="quantity" name="count" value="1" maxlength="4" onpaste="return false;"
+                               type="text">
+                        <div>
+                            <span id="increase" class="increase" onclick="increaseCount()">&nbsp;</span>
+                            <span id="decrease" class="decrease" onclick="decreaseCount()">&nbsp;</span>
+                        </div>
+                    </dd>
+                    <dd>
+                        件
+                    </dd>
+                </dl>
+                <div class="buy">
+                    <input id="addCart" onclick="formSubmit()" class="addCart" value="加入购物车" type="button">
 
-            <dl class="quantity">
-                <dt>购买数量:</dt>
-                <dd>
-                    <input id="quantity" name="quantity" value="1" maxlength="4" onpaste="return false;" type="text">
-                    <div>
-                        <span id="increase" class="increase">&nbsp;</span>
-                        <span id="decrease" class="decrease">&nbsp;</span>
-                    </div>
-                </dd>
-                <dd>
-                    件
-                </dd>
-            </dl>
-            <div class="buy">
-                <input id="addCart" class="addCart" value="加入购物车" type="button">
-
-            </div>
+                </div>
+            </form>
         </div>
         <div id="bar" class="bar">
             <ul>

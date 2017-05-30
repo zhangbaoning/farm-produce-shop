@@ -59,6 +59,9 @@
     <bean id="cateGorysecondAction" class="category.action.CateGorysecondAction">
         <property name="categorysercondService" ref="categorysercondService"/>
     </bean>
+    <bean id="cartAction" class="cart.action.CartAction" scope="prototype">
+    <property name="cartService" ref="cartService"/>
+    </bean>
 
     <!--SERVICE-->
         <!--User-->
@@ -75,6 +78,9 @@
     </bean>
         <!--商品-->
     <bean id="productService" class="product.servcie.ProductService">
+        <property name="productDao" ref="productDao"/>
+    </bean>
+    <bean id="cartService" class="cart.service.CartService">
         <property name="productDao" ref="productDao"/>
     </bean>
     <!--DAO-->

@@ -7,6 +7,7 @@
 <struts>
     <package name="shop" namespace="/" extends="struts-default">
         <global-results>
+            <result name="cartPage">/WEB-INF/jsp/cartPage.jsp</result>
             <result name="msg">WEB-INF/jsp/msg.jsp</result>
             <result name="menueDetails">WEB-INF/jsp/menueDetails.jsp</result>
         </global-results>
@@ -27,6 +28,9 @@
        </action>
         <action name="cateGorysecond_*" method="{1}" class="cateGorysecondAction">
 
+        </action>
+        <action name="cart_*" method="{1}" class="cartAction">
+            <result name="input">/WEB-INF/jsp/details.jsp</result>
         </action>
     </package>
     <constant name="struts.devMode" value="true"/>
