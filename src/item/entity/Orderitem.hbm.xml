@@ -8,5 +8,7 @@
         <id name="itemid" column="itemid"/>
         <property name="count" column="count"/>
         <property name="subtotal" column="subtotal"/>
+        <many-to-one name="product" column="pid" class="product.entity.Product"/>
+        <many-to-one name="order" column="oid" class="order.entity.Orders"/>
     </class>
 </hibernate-mapping>

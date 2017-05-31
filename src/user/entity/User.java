@@ -1,5 +1,9 @@
 package user.entity;
 
+import order.entity.Orders;
+
+import java.util.Set;
+
 /**
  * Created by zhangbaoning on 2017/5/23.
  */
@@ -13,6 +17,15 @@ public class User {
     private String addr;
     private Integer state;
     private String code;
+    private Set<Orders> orders; //和order是一对多关系
+
+    public Set<Orders> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Orders> orders) {
+        this.orders = orders;
+    }
 
     public int getUid() {
         return uid;

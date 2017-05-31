@@ -1,6 +1,10 @@
 package order.entity;
 
+import item.entity.Orderitem;
+import user.entity.User;
+
 import java.sql.Timestamp;
+import java.util.Set;
 
 /**
  * Created by zhangbaoning on 2017/5/30.
@@ -13,6 +17,24 @@ public class Orders {
     private String name;
     private String phone;
     private String addr;
+    private Set<Orderitem> orderitems; //和中间表是一对多的关系
+    private User user; //和user是多对一的关系
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Set<Orderitem> getOrderitems() {
+        return orderitems;
+    }
+
+    public void setOrderitems(Set<Orderitem> orderitems) {
+        this.orderitems = orderitems;
+    }
 
     public int getOid() {
         return oid;

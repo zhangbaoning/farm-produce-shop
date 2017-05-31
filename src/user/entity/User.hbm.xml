@@ -16,5 +16,9 @@
         <property name="addr" column="addr"/>
         <property name="state" column="state"/>
         <property name="code" column="code"/>
+        <set name="orders">
+            <key column="uid"/>
+            <one-to-many class="order.entity.Orders"/>
+        </set>
     </class>
 </hibernate-mapping>

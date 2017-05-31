@@ -36,6 +36,8 @@
                 <value>category/entity/Category.hbm.xml</value>
                 <value>product/entity/Product.hbm.xml</value>
                 <value>category/entity/Categorysecond.hbm.xml</value>
+                <value>order/entity/Orders.hbm.xml</value>
+                <value>item/entity/Orderitem.hbm.xml</value>
             </list>
         </property>
     </bean>
@@ -61,6 +63,10 @@
     </bean>
     <bean id="cartAction" class="cart.action.CartAction" scope="prototype">
     <property name="cartService" ref="cartService"/>
+    </bean>
+    <!--Order-->
+    <bean name="oderAction" class="order.action.OderAction">
+
     </bean>
 
     <!--SERVICE-->

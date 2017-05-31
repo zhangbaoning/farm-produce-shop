@@ -1,5 +1,8 @@
 package item.entity;
 
+import org.hibernate.criterion.Order;
+import product.entity.Product;
+
 /**
  * Created by zhangbaoning on 2017/5/30.
  */
@@ -7,6 +10,24 @@ public class Orderitem {
     private int itemid;
     private Integer count;
     private Double subtotal;
+    private Product product; //中间表和商品是多对一
+    private Order order; //中间表和订单是多对一
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 
     public int getItemid() {
         return itemid;

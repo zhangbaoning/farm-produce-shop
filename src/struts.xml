@@ -29,8 +29,13 @@
         <action name="cateGorysecond_*" method="{1}" class="cateGorysecondAction">
 
         </action>
+        <!--购物车-->
         <action name="cart_*" method="{1}" class="cartAction">
             <result name="input">/WEB-INF/jsp/details.jsp</result>
+        </action>
+        <!--订单-->
+        <action name="order_*" method="{1}" class="oderAction">
+            <result name="orderPage">/WEB-INF/jsp/orderPage.jsp</result>
         </action>
     </package>
     <constant name="struts.devMode" value="true"/>

@@ -1,8 +1,10 @@
 package product.entity;
 
 import category.entity.Categorysecond;
+import item.entity.Orderitem;
 
 import java.sql.Timestamp;
+import java.util.Set;
 
 /**
  * Created by zhangbaoning on 2017/5/25.
@@ -17,6 +19,15 @@ public class Product {
     private Integer isHot;
     private Timestamp pdate;
     Categorysecond categorysecond;
+    private Set<Orderitem> orderitems; //和中间表一对多
+
+    public Set<Orderitem> getOrderitems() {
+        return orderitems;
+    }
+
+    public void setOrderitems(Set<Orderitem> orderitems) {
+        this.orderitems = orderitems;
+    }
 
     public Categorysecond getCategorysecond() {
         return categorysecond;
