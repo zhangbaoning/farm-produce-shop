@@ -19,13 +19,19 @@
             <result name="loginPage">WEB-INF/jsp/loginPage.jsp</result>
             <result name="input">WEB-INF/jsp/registerPage.jsp</result>
             <result type="redirect">index.action</result>
+            <result name="user_list">WEB-INF/jsp/admin/user/list.jsp</result>
+            <result name="user_edit_page">WEB-INF/jsp/admin/user/edit.jsp</result>
+            <result name="update_success" type="redirect">user_findAll.action</result>
         </action>
         <action name="product_*" method="{1}" class="productAction">
             <result name="{1}">/WEB-INF/jsp/details.jsp</result>
         </action>
-       <action name="category_*" method="{1}" class="categoryAction">
-        <!--<result name="{1}">/WEB-INF/jsp/{1}.jsp</result>-->
-       </action>
+        <action name="category_*" method="{1}" class="categoryAction">
+            <!--<result name="{1}">/WEB-INF/jsp/{1}.jsp</result>-->
+            <result name="adminAllCategory">/WEB-INF/jsp/admin/category/list.jsp</result>
+            <result type="redirect" name="adminDelCategory">category_adminAllCategory.action</result>
+            <result type="redirect" name="adminAddCategory">category_adminAllCategory.action</result>
+        </action>
         <action name="cateGorysecond_*" method="{1}" class="cateGorysecondAction">
 
         </action>
@@ -36,6 +42,14 @@
         <!--订单-->
         <action name="order_*" method="{1}" class="oderAction">
             <result name="orderPage">/WEB-INF/jsp/orderPage.jsp</result>
+            <result type="redirect" name="loginPage">user_loginPage.action</result>
+
+        </action>
+        <!--管理员-->
+        <action name="admin_*" method="{1}" class="adminAction">
+            <result>WEB-INF/jsp/admin/home.jsp</result>
+            <result name="login">WEB-INF/jsp/admin/index.jsp</result>
+            <result name="adminPage">WEB-INF/jsp/admin/index.jsp</result>
         </action>
     </package>
     <constant name="struts.devMode" value="true"/>

@@ -34,8 +34,9 @@ public class CategoryService {
     public PageBean menueDetails(int cid, int page_number) {
         PageBean pageBean = new PageBean();
         pageBean.setTotalCount(productDao.getProductCount(cid));
-        pageBean.setTotalPage((int) Math.ceil(pageBean.getTotalCount() / pageBean.getLimit()));
-        int start = (page_number-1) * pageBean.getLimit() + 1;
+        //乘1.0让除法得到的是小数，再进行向上取整
+        pageBean.setTotalPage((int) Math.ceil(pageBean.getTotalCount()*1.0 / pageBean.getLimit()));
+        int start = (page_number-1) * pageBean.getLimit();
         //将得到商品分页返回
         //默认是第一页
         //如果跳页，需要将第几页传入
@@ -51,5 +52,12 @@ public class CategoryService {
         PageBean pageBean = service.menueDetails(1,1);
         System.out.println(pageBean.getList().size());
         System.out.println(pageBean.toString());
+    }
+    public void add(Category category){
+        this.categoryDao.add(category);
+    }
+    public void del(Integer cid){
+        Category category = this.categoryDao.get(cid);
+        this.categoryDao.del(category);
     }
 }

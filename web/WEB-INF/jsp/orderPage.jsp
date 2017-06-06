@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: zhangbaoning
@@ -44,50 +45,50 @@
                 <th>小计</th>
                 <th>操作</th>
             </tr>
-
+            <s:iterator var="cart_item" value="#session.all_item">
             <tr>
                 <td width="60">
                     <input type="hidden" name="id" value="22"/>
-                    <img src=""/>
+                    <img src="<s:property value="#cart_item.product.image"/>"/>
                 </td>
                 <td>
                     <a target="_blank"><s:property value="product.pname"/></a>
                 </td>
                 <td>
-                    100
+                    <s:property value="#cart_item.product.shopPrice"/>
                 </td>
                 <td class="quantity" width="60">
-                    <input type="text" name="count" value="1" maxlength="4" onpaste="return false;"/>
+                    <input type="text" name="count" value="<s:property value="#cart_item.count"/> " maxlength="4" onpaste="return false;"/>
                     <div>
                         <span class="increase">&nbsp;</span>
                         <span class="decrease">&nbsp;</span>
                     </div>
                 </td>
                 <td width="140">
-                    <span class="subtotal">￥100</span>
+                    <span class="subtotal"><s:property value="#cart_item.item_total"/></span>
                 </td>
                 <td>
                     <a href="./cart_removeCart.action?pid=1" class="delete">删除</a>
                 </td>
             </tr>
-
+            </s:iterator>
             </tbody>
         </table>
         <dl id="giftItems" class="hidden" style="display: none;">
         </dl>
         <div class="total">
             <em id="promotion"></em>
-            商品金额: <strong id="effectivePrice">￥100元</strong>
+            商品金额: <strong id="effectivePrice">￥<s:property value="#session.cart.cart_total"/> </strong>
         </div>
         <form id="orderForm" action="./order_payOrder.action" method="post">
-            <input type="hidden" name="order.oid" value=""/>
+            <input type="hidden" name="order.oid" value="order"/>
             <div class="span24">
                 <p>
-                    收货地址：<input name="order.user.addr" type="text" value="" style="width:350px" />
+                    收货地址：<input name="order.user.addr" type="text" value="<s:property value="#session.user.addr"/> " style="width:350px" />
                     <br />
-                    收货人&nbsp;&nbsp;&nbsp;：<input name="order.user.username" type="text" value="" style="width:150px" />
+                    收货人&nbsp;&nbsp;&nbsp;：<input name="order.user.username" type="text" value="<s:property value="#session.user.username"/> " style="width:150px" />
                     <br />
-                    联系方式：<input name="order.user.phone" type="text"value="" style="width:150px" />
+                    联系方式：<input name="order.user.phone" type="text"value="<s:property value="#session.user.phone"/>" style="width:150px" />
 
                 </p>
                 <hr />

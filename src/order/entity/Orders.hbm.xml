@@ -5,7 +5,9 @@
 <hibernate-mapping>
 
     <class name="order.entity.Orders" table="orders" schema="farm_produce_shop">
-        <id name="oid" column="oid"/>
+        <id name="oid" column="oid">
+            <generator class="native"/>
+        </id>
         <property name="total" column="total"/>
         <property name="ordertime" column="ordertime"/>
         <property name="state" column="state"/>

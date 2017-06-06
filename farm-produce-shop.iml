@@ -5,6 +5,7 @@
       <configuration>
         <datasource-map>
           <unit-entry name="a.xml" value="23e89ff9-f718-492f-8453-f1e734975aa3" />
+          <unit-entry name="sessionFactory" value="dataSource" />
         </datasource-map>
         <naming-strategy-map />
       </configuration>
@@ -29,7 +30,11 @@
       </facet>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/spring.xml</file>
+        </fileset>
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
@@ -42,5 +47,6 @@
     <orderEntry type="library" name="farm-produce-shop" level="project" />
     <orderEntry type="library" name="Tomcat" level="project" />
     <orderEntry type="library" name="kaptcha-2.3" level="project" />
+    <orderEntry type="library" name="junit" level="project" />
   </component>
 </module>

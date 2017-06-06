@@ -12,6 +12,12 @@
         <url-pattern>*.action</url-pattern>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
+
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+
     </filter-mapping>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -28,5 +34,50 @@
         <servlet-name>kaptcha</servlet-name>
         <url-pattern>/checkcode.jpg</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>top</servlet-name>
+        <jsp-file>/WEB-INF/jsp/admin/top.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>top</servlet-name>
+        <url-pattern>/top.jsp</url-pattern>
+    </servlet-mapping><servlet>
+        <servlet-name>right</servlet-name>
+        <jsp-file>/WEB-INF/jsp/admin/right.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>right</servlet-name>
+        <url-pattern>/right.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>bottom</servlet-name>
+        <jsp-file>/WEB-INF/jsp/admin/bottom.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>bottom</servlet-name>
+        <url-pattern>/bottom.jsp</url-pattern>
+    </servlet-mapping><servlet>
+        <servlet-name>left</servlet-name>
+        <jsp-file>/WEB-INF/jsp/admin/left.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>left</servlet-name>
+        <url-pattern>/left.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>welcome</servlet-name>
+        <jsp-file>/WEB-INF/jsp/admin/welcome.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>welcome</servlet-name>
+        <url-pattern>/welcome.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>category_add</servlet-name>
+        <jsp-file>/WEB-INF/jsp/admin/category/add.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>category_add</servlet-name>
+        <url-pattern>/category_add</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -13,6 +13,7 @@ import utils.UUIDUtils;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -86,7 +87,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
         if (login_user != null) {
             HttpSession session = ServletActionContext.getRequest().getSession();
             session.setAttribute("user", login_user);
-            session.setMaxInactiveInterval(10);
 //            ActionContext.getContext().getSession().put("user",login_user);
             return SUCCESS;
         } else {
@@ -95,9 +95,45 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
         }
 
     }
-    public String logout(){
+
+    public String logout() {
         ServletActionContext.getRequest().getSession().invalidate();
         return SUCCESS;
+    }
+
+    public String findAll() {
+        List list = this.userService.getAll();
+        ActionContext.getContext().getSession().put("user_list", list);
+        return "user_list";
+    }
+
+    /**
+     * 后台更新用户
+     * @return 返回值要重定向到action
+     */
+    public String update() {
+        this.userService.update(user);
+        return "update_success";
+    }
+
+    /**
+     * 在后台用户编辑
+     *
+     * @return name of struts2 's
+     */
+    public String adminEdit() {
+        //根据传进来的uid获得对象保存在模型驱动中model中
+        user = this.userService.getByUid(user.getUid());
+        return "user_edit_page";
+    }
+
+    /**
+     *
+     * @return 删除后和更新的返回界面相同
+     */
+    public String adminDel(){
+        userService.del(user.getUid());
+        return "update_success";
     }
 }
 

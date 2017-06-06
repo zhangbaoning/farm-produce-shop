@@ -40,4 +40,16 @@ public class UserDao extends HibernateDaoSupport {
         }else
         return null;
     }
+    public List getAll(){
+        String hql = "from User ";
+        List list = this.getHibernateTemplate().find(hql);
+        return list;
+    }
+    public User getByUid(Integer uid){
+        return this.getHibernateTemplate().get(User.class,uid);
+    }
+    public void del(User user){
+        this.getHibernateTemplate().delete(user);
+    }
+
 }

@@ -38,6 +38,7 @@
                 <value>category/entity/Categorysecond.hbm.xml</value>
                 <value>order/entity/Orders.hbm.xml</value>
                 <value>item/entity/Orderitem.hbm.xml</value>
+                <value>admin/entity/Adminuser.hbm.xml</value>
             </list>
         </property>
     </bean>
@@ -64,9 +65,12 @@
     <bean id="cartAction" class="cart.action.CartAction" scope="prototype">
     <property name="cartService" ref="cartService"/>
     </bean>
+    <bean id="adminAction" class="admin.action.AdminAction" scope="prototype">
+        <property name="adminService" ref="adminService"/>
+    </bean>
     <!--Order-->
-    <bean name="oderAction" class="order.action.OderAction">
-
+    <bean name="oderAction" class="order.action.OderAction" scope="prototype">
+    <property name="orderService" ref="orderService"/>
     </bean>
 
     <!--SERVICE-->
@@ -89,6 +93,13 @@
     <bean id="cartService" class="cart.service.CartService">
         <property name="productDao" ref="productDao"/>
     </bean>
+    <bean id="orderService" class="order.service.OrderService">
+        <property name="itemDao" ref="itemDao"/>
+    </bean>
+        <!--管理员-->
+    <bean id="adminService" class="admin.service.AdminService">
+        <property name="adminDao" ref="adminDao"/>
+    </bean>
     <!--DAO-->
         <!--User-->
     <bean id="userDao" class="user.dao.UserDao">
@@ -100,6 +111,14 @@
     </bean>
         <!--商品-->
     <bean id="productDao" class="product.dao.ProductDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+        <!--中间表-->
+    <bean id="itemDao" class="item.dao.ItemDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+        <!--管理员-->
+    <bean id="adminDao" class="admin.dao.AdminDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">

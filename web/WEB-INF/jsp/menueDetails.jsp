@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>传智网上商城</title>
+    <title>网上商城</title>
     <link href="./css/common.css" rel="stylesheet" type="text/css"/>
     <link href="./css/product.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -23,7 +23,7 @@
             <s:iterator var="all_category" value="#session.all_category">
                 <dl>
                     <dt>
-                        <a href="./image/蔬菜 - Powered By Mango Team.htm"><s:property value="#all_category.cname"/> </a>
+                        <a href="${pageContext.request.contextPath}/category_menueDetails.action?cid=<s:property value="#all_category.cid"/> "><s:property value="#all_category.cname"/> </a>
                     </dt>
                     <s:iterator value="#all_category.categorysecondSet" var="second">
                         <dd>

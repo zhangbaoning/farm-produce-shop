@@ -1,6 +1,6 @@
 package item.entity;
 
-import org.hibernate.criterion.Order;
+import order.entity.Orders;
 import product.entity.Product;
 
 /**
@@ -11,14 +11,14 @@ public class Orderitem {
     private Integer count;
     private Double subtotal;
     private Product product; //中间表和商品是多对一
-    private Order order; //中间表和订单是多对一
+    private Orders orders; //中间表和订单是多对一
 
-    public Order getOrder() {
-        return order;
+    public Orders getOrders() {
+        return orders;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrders(Orders orders) {
+        this.orders = orders;
     }
 
     public Product getProduct() {

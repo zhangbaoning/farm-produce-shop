@@ -35,7 +35,7 @@
                 <div class="title">
                     <strong>会员登录</strong>USER LOGIN
                 </div>
-                <form id="loginForm" method="post" novalidate="novalidate">
+                <form id="loginForm" method="get" novalidate="novalidate">
                     <table>
                         <tbody>
                         <tr>
@@ -56,20 +56,20 @@
                                        autocomplete="off">
                             </td>
                         </tr>
-                        <tr>
-                            <th>
-                                验证码:
-                            </th>
-                            <td>
-										<span class="fieldSet">
-											<input type="text" id="captcha" name="captcha" class="text captcha"
-                                                   maxlength="4" autocomplete="off"><img id="captchaImage"
-                                                                                         class="captchaImage"
-                                                                                         src="./image/captcha.jhtml"
-                                                                                         title="点击更换验证码">
-										</span>
-                            </td>
-                        </tr>
+                        <%--<tr>--%>
+                            <%--<th>--%>
+                                <%--验证码:--%>
+                            <%--</th>--%>
+                            <%--<td>--%>
+										<%--<span class="fieldSet">--%>
+											<%--<input type="text" id="captcha" name="captcha" class="text captcha"--%>
+                                                   <%--maxlength="4" autocomplete="off"><img id="captchaImage"--%>
+                                                                                         <%--class="captchaImage"--%>
+                                                                                         <%--src="./image/captcha.jhtml"--%>
+                                                                                         <%--title="点击更换验证码">--%>
+										<%--</span>--%>
+                            <%--</td>--%>
+                        <%--</tr>--%>
                         <tr>
                             <th>&nbsp;
 
