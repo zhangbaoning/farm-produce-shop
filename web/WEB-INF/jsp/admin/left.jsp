@@ -29,7 +29,7 @@
 		d.add('0102','01','一级分类管理','','','mainFrame');
 		d.add('010201','0102','一级分类管理','${pageContext.request.contextPath}/category_adminAllCategory.action','','mainFrame');
 		d.add('0103','01','二级分类管理');
-		d.add('010301','0103','二级分类管理','${pageContext.request.contextPath}/adminCategorySecond_findAll.action?page=1','','mainFrame');
+		d.add('010301','0103','二级分类管理','${pageContext.request.contextPath}/cateGorysecond_adminGetCsList.action','','mainFrame');
 		d.add('0104','01','商品管理');
 		d.add('010401','0104','商品管理','${pageContext.request.contextPath}/adminProduct_findAll.action?page=1','','mainFrame');
 		d.add('0105','01','订单管理');

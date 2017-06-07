@@ -8,7 +8,7 @@
 		<script language="javascript" src="${pageContext.request.contextPath}/js/public.js"></script>
 		<script type="text/javascript">
 			function addCategorySecond(){
-				window.location.href = "${pageContext.request.contextPath}/adminCategorySecond_addPage.action";
+				window.location.href = "${pageContext.request.contextPath}/cateGorysecond_addPage.action";
 			}
 		</script>
 	</HEAD>
@@ -63,13 +63,13 @@
 												<s:property value="#cs.csname"/>
 											</td>
 											<td align="center" style="HEIGHT: 22px">
-												<a href="${ pageContext.request.contextPath }/adminCategorySecond_edit.action?csid=<s:property value="#cs.csid"/>">
+												<a href="${ pageContext.request.contextPath }/cateGorysecond_editPage.action?csid=<s:property value="#cs.csid"/>">
 													<img src="${pageContext.request.contextPath}/images/i_edit.gif" border="0" style="CURSOR: hand">
 												</a>
 											</td>
 									
 											<td align="center" style="HEIGHT: 22px">
-												<a href="${ pageContext.request.contextPath }/adminCategorySecond_delete.action?csid=<s:property value="#cs.csid"/>">
+												<a href="${ pageContext.request.contextPath }/cateGorysecond_delete.action?csid=<s:property value="#cs.csid"/>">
 													<img src="${pageContext.request.contextPath}/images/i_del.gif" width="16" height="16" border="0" style="CURSOR: hand">
 												</a>
 											</td>
@@ -83,12 +83,12 @@
 						<td colspan="4">
 							第<s:property value="pageBean.page"/>/<s:property value="pageBean.totalPage"/>页  
 							<s:if test="pageBean.page != 1">
-								<a href="${pageContext.request.contextPath }/adminCategorySecond_findAll.action?page=1">首页</a> |
-								<a href="${pageContext.request.contextPath }/adminCategorySecond_findAll.action?page=<s:property value="pageBean.page-1"/>">上一页</a> |
+								<a href="${pageContext.request.contextPath }/cateGorysecond_adminGetCsList.action?page=1">首页</a> |
+								<a href="${pageContext.request.contextPath }/cateGorysecond_adminGetCsList.action?page=<s:property value="pageBean.page-1"/>">上一页</a> |
 							</s:if>
 							<s:if test="pageBean.page != pageBean.totalPage">
-							<a href="${pageContext.request.contextPath }/adminCategorySecond_findAll.action?page=<s:property value="pageBean.page+1"/>">下一页</a> |
-							<a href="${pageContext.request.contextPath }/adminCategorySecond_findAll.action?page=<s:property value="pageBean.totalPage"/>">尾页</a> 
+							<a href="${pageContext.request.contextPath }/cateGorysecond_adminGetCsList.action?page=<s:property value="pageBean.page+1"/>">下一页</a> |
+							<a href="${pageContext.request.contextPath }/cateGorysecond_adminGetCsList.action?page=<s:property value="pageBean.totalPage"/>">尾页</a>
 							</s:if>
 						</td>
 					</tr>

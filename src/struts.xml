@@ -33,7 +33,10 @@
             <result type="redirect" name="adminAddCategory">category_adminAllCategory.action</result>
         </action>
         <action name="cateGorysecond_*" method="{1}" class="cateGorysecondAction">
-
+            <result name="adminGetCsList">/WEB-INF/jsp/admin/categorysecond/list.jsp</result>
+            <result type="redirect">cateGorysecond_adminGetCsList.action</result>
+            <result name="adminAddPage">/WEB-INF/jsp/admin/categorysecond/add.jsp</result>
+            <result name="editPage">/WEB-INF/jsp/admin/categorysecond/edit.jsp</result>
         </action>
         <!--购物车-->
         <action name="cart_*" method="{1}" class="cartAction">

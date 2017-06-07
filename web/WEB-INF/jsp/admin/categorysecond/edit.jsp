@@ -8,7 +8,7 @@
 	</HEAD>
 	
 	<body>
-		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/adminCategorySecond_update.action" method="post">
+		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/cateGorysecond_update.action" method="get">
 			<input type="hidden" name="csid" value="<s:property value="model.csid"/>">
 			&nbsp;
 			<table cellSpacing="1" cellPadding="5" width="100%" align="center" bgColor="#eeeeee" style="border: 1px solid #8ba7e3" border="0">
@@ -32,7 +32,7 @@
 					</td>
 					<td class="ta_01" bgColor="#ffffff" >
 						<select name="category.cid">
-							<s:iterator var="c" value="cList">
+							<s:iterator var="c" value="category_list">
 								<option value="<s:property value="#c.cid"/>" <s:if test="#c.cid==model.category.cid">selected</s:if>><s:property value="#c.cname"/></option>
 							</s:iterator>
 						</select>

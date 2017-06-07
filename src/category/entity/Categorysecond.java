@@ -2,13 +2,23 @@ package category.entity;
 
 import product.entity.Product;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Created by zhangbaoning on 2017/5/25.
  */
-public class Categorysecond {
+public class Categorysecond implements Serializable {
+    @Override
+    public String toString() {
+        return "Categorysecond{" +
+                "csid=" + csid +
+                ", csname='" + csname + '\'' +
+                ", productSet=" + productSet +
+                ", category=" + category +
+                '}';
+    }
 
     private int csid;
     private String csname;

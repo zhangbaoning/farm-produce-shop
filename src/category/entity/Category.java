@@ -1,12 +1,13 @@
 package category.entity;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Created by zhangbaoning on 2017/5/25.
  */
-public class Category {
+public class Category implements Serializable{
     private int cid;
     private String cname;
     private Set<Categorysecond> categorysecondSet = new HashSet<>();

@@ -85,6 +85,8 @@
     </bean>
     <bean id="categorysercondService" class="category.service.CategorysercondService">
         <property name="productDao" ref="productDao"/>
+        <property name="categorysecondDao" ref="categorysecondDao"/>
+        <property name="categoryDao" ref="categoryDao"/>
     </bean>
         <!--商品-->
     <bean id="productService" class="product.servcie.ProductService">
@@ -119,6 +121,9 @@
     </bean>
         <!--管理员-->
     <bean id="adminDao" class="admin.dao.AdminDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="categorysecondDao" class="category.dao.CategorysecondDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">

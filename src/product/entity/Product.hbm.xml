@@ -5,7 +5,9 @@
 <hibernate-mapping>
 
     <class name="product.entity.Product" table="product" schema="farm_produce_shop">
-        <id name="pid" column="pid"/>
+        <id name="pid" column="pid">
+            <generator class="native"/>
+        </id>
         <property name="pname" column="pname"/>
         <property name="marketPrice" column="market_price"/>
         <property name="shopPrice" column="shop_price"/>

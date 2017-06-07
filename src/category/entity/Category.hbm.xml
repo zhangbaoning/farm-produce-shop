@@ -5,9 +5,11 @@
 <hibernate-mapping>
 
     <class name="category.entity.Category" table="category" schema="farm_produce_shop">
-        <id name="cid" column="cid"/>
+        <id name="cid" column="cid">
+            <generator class="native"/>
+        </id>
         <property name="cname" column="cname"/>
-        <set name="categorysecondSet"  lazy="false">
+        <set name="categorysecondSet"  lazy="false" cascade="delete">
             <key column="cid"/>
             <one-to-many class="category.entity.Categorysecond"/>
         </set>
