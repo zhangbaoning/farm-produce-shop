@@ -55,6 +55,7 @@
     </bean>
     <bean id="productAction" class="product.action.ProductAction" scope="prototype">
         <property name="productService" ref="productService"/>
+        <property name="categorysecondService" ref="categorysercondService"/>
     </bean>
     <bean id="categoryAction" class="category.action.CategoryAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>

@@ -18,7 +18,7 @@ import java.util.List;
  * Created by zhangbaoning on 2017/5/26.
  */
 public class CateGorysecondAction extends ActionSupport implements ModelDriven<Categorysecond>  {
-    int csid;
+//    int csid;
     int page = 1; //默认第一页
     int cid;
 
@@ -38,13 +38,13 @@ public class CateGorysecondAction extends ActionSupport implements ModelDriven<C
         return categorysecond;
     }
 
-    public int getCsid() {
-        return csid;
-    }
-
-    public void setCsid(int csid) {
-        this.csid = csid;
-    }
+//    public int getCsid() {
+//        return csid;
+//    }
+//
+//    public void setCsid(int csid) {
+//        this.csid = csid;
+//    }
 
     public int getPage() {
         return page;
@@ -61,9 +61,10 @@ public class CateGorysecondAction extends ActionSupport implements ModelDriven<C
     }
 
     public String getProductByCs() {
-        PageBean pageBean = categorysercondService.getProductByCs(csid, page);
+        PageBean pageBean = categorysercondService.getProductByCs(categorysecond.getCsid(), page);
+        System.out.println(categorysecond.getCsid());
         ActionContext.getContext().getValueStack().set("pageBean", pageBean);
-        ActionContext.getContext().getValueStack().set("csid", csid);
+        ActionContext.getContext().getValueStack().set("csid", categorysecond.getCsid());
         return "menueDetails";
     }
 

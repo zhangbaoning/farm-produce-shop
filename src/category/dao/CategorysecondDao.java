@@ -41,4 +41,9 @@ public class CategorysecondDao extends HibernateDaoSupport {
     public void del(Categorysecond categorysecond){
         this.getHibernateTemplate().delete(categorysecond);
     }
+    public List getAllCategorysecond(){
+        String hql = "from Categorysecond ";
+        return this.getHibernateTemplate().find(hql);
+    }
+
 }

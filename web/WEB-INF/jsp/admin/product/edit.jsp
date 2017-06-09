@@ -9,7 +9,7 @@
 	
 	<body>
 		<!--  -->
-		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/adminProduct_update.action" method="post" enctype="multipart/form-data">
+		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/product_adminEdit.action" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="pid" value="<s:property value="model.pid"/>">
 			<input type="hidden" name="image" value="<s:property value="model.image"/>">
 			
@@ -46,13 +46,13 @@
 						市场价格：
 					</td>
 					<td class="ta_01" bgColor="#ffffff">
-						<input type="text" name="market_price" value="<s:property value="model.market_price"/>" id="userAction_save_do_logonName" class="bg"/>
+						<input type="text" name="marketPrice" value="<s:property value="model.marketPrice"/>" id="userAction_save_do_logonName" class="bg"/>
 					</td>
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
 						商城价格：
 					</td>
 					<td class="ta_01" bgColor="#ffffff">
-						<input type="text" name="shop_price" value="<s:property value="model.shop_price"/>" id="userAction_save_do_logonName" class="bg"/>
+						<input type="text" name="shopPrice" value="<s:property value="model.shopPrice"/>" id="userAction_save_do_logonName" class="bg"/>
 					</td>
 				</tr>
 				<tr>

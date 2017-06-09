@@ -76,7 +76,7 @@ public class CategorysercondService {
     }
 
     /**
-     * 输入csid得到这个对象，然后将新对象进行更新
+     *
      */
     public void update(Categorysecond categorysecond){
         categorysecondDao.update(categorysecond);
@@ -93,5 +93,8 @@ public class CategorysercondService {
     public void del(Integer csid){
         Categorysecond categorysecond = categorysecondDao.get(csid);
         categorysecondDao.del(categorysecond);
+    }
+    public List getAllCategorysecond(){
+        return categorysecondDao.getAllCategorysecond();
     }
 }

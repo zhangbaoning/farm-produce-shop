@@ -24,7 +24,13 @@
             <result name="update_success" type="redirect">user_findAll.action</result>
         </action>
         <action name="product_*" method="{1}" class="productAction">
-            <result name="{1}">/WEB-INF/jsp/details.jsp</result>
+            <result name="getById">/WEB-INF/jsp/details.jsp</result>
+            <result name="adminGetByPage">WEB-INF/jsp/admin/product/list.jsp</result>
+            <result name="adminAddPage">WEB-INF/jsp/admin/product/add.jsp</result>
+            <result name="adminEditPage">WEB-INF/jsp/admin/product/edit.jsp</result>
+            <result name="adminDel" type="redirect">product_adminGetByPage.action</result>
+            <result name="adminAdd" type="redirect">product_adminGetByPage.action</result>
+            <result name="adminEdit" type="redirect">product_adminGetByPage.action</result>
         </action>
         <action name="category_*" method="{1}" class="categoryAction">
             <!--<result name="{1}">/WEB-INF/jsp/{1}.jsp</result>-->

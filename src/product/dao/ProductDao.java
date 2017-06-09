@@ -72,6 +72,26 @@ public class ProductDao extends HibernateDaoSupport {
 
         return list;
     }
+    public int getAll(){
+        String hql = "from Product";
+        List list = this.getHibernateTemplate().find(hql);
+        return list.size();
+    }
+
+    /**
+     * 分页所有的商品
+     * @param pageBean 分页的信息
+     * @return 分页查询到的商品集合
+     */
+    public List getAllByPage(PageBean pageBean,int start){
+        String hql = "from Product";
+        List list = this.getHibernateTemplate().execute(new PageHibernateCallBack(hql,
+                pageBean.getLimit(),null,start));
+        return list;
+    }
+    public void del(Product product){
+        this.getHibernateTemplate().delete(product);
+    }
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("/spring.xml");
@@ -80,4 +100,11 @@ public class ProductDao extends HibernateDaoSupport {
 
     }
 
+    public void save(Product product) {
+        this.getHibernateTemplate().save(product);
+    }
+
+    public void update(Product product) {
+        this.getHibernateTemplate().update(product);
+    }
 }

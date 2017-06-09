@@ -8,7 +8,7 @@
 		<script language="javascript" src="${pageContext.request.contextPath}/js/public.js"></script>
 		<script type="text/javascript">
 			function addProduct(){
-				window.location.href = "${pageContext.request.contextPath}/adminProduct_addPage.action";
+				window.location.href = "${pageContext.request.contextPath}/product_adminAddPage.action";
 			}
 		</script>
 	</HEAD>
@@ -89,13 +89,13 @@
 												</s:else>
 											</td>
 											<td align="center" style="HEIGHT: 22px">
-												<a href="${ pageContext.request.contextPath }/adminProduct_edit.action?pid=<s:property value="#p.pid"/>">
+												<a href="${ pageContext.request.contextPath }/product_adminEditPage.action?pid=<s:property value="#p.pid"/>">
 													<img src="${pageContext.request.contextPath}/images/i_edit.gif" border="0" style="CURSOR: hand">
 												</a>
 											</td>
 									
 											<td align="center" style="HEIGHT: 22px">
-												<a href="${ pageContext.request.contextPath }/adminProduct_delete.action?pid=<s:property value="#p.pid"/>">
+												<a href="${ pageContext.request.contextPath }/product_adminDel.action?pid=<s:property value="#p.pid"/>">
 													<img src="${pageContext.request.contextPath}/images/i_del.gif" width="16" height="16" border="0" style="CURSOR: hand">
 												</a>
 											</td>
@@ -108,12 +108,12 @@
 						<td colspan="7">
 							第<s:property value="pageBean.page"/>/<s:property value="pageBean.totalPage"/>页 
 							<s:if test="pageBean.page != 1">
-								<a href="${ pageContext.request.contextPath }/adminProduct_findAll.action?page=1">首页</a>|
-								<a href="${ pageContext.request.contextPath }/adminProduct_findAll.action?page=<s:property value="pageBean.page-1"/>">上一页</a>|
+								<a href="${ pageContext.request.contextPath }/product_adminGetByPage.action?page=1">首页</a>|
+								<a href="${ pageContext.request.contextPath }/product_adminGetByPage.action?page=<s:property value="pageBean.page-1"/>">上一页</a>|
 							</s:if>
 							<s:if test="pageBean.page != pageBean.totalPage">
-								<a href="${ pageContext.request.contextPath }/adminProduct_findAll.action?page=<s:property value="pageBean.page+1"/>">下一页</a>|
-								<a href="${ pageContext.request.contextPath }/adminProduct_findAll.action?page=<s:property value="pageBean.totalPage"/>">尾页</a>|
+								<a href="${ pageContext.request.contextPath }/product_adminGetByPage.action?page=<s:property value="pageBean.page+1"/>">下一页</a>|
+								<a href="${ pageContext.request.contextPath }/product_adminGetByPage.action?page=<s:property value="pageBean.totalPage"/>">尾页</a>|
 							</s:if>
 						</td>
 					</tr>
