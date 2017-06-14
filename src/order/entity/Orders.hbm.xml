@@ -17,7 +17,7 @@
         <!--和User多对一-->
         <many-to-one name="user" lazy="false" class="user.entity.User" column="uid"/>
         <!--和中间表的一对多-->
-        <set name="orderitems" cascade="save-update" lazy="false">
+        <set name="orderitems" cascade="save-update" lazy="false" inverse="true">
             <key column="oid"/>
             <one-to-many class="item.entity.Orderitem"/>
         </set>

@@ -63,33 +63,33 @@ function dTree(objName) {
 
 	this.icon = {
 
-		root				: '../images/tree/base.gif',
+		root				: '${pageContext.request.contextPath}/images/tree/base.gif',
 
-		folder			: '../images/tree/folder.gif',
+		folder			: '${pageContext.request.contextPath}/images/tree/folder.gif',
 
-		folderOpen	: '../images/tree/folderopen.gif',
+		folderOpen	: '${pageContext.request.contextPath}/images/tree/folderopen.gif',
 
-		node				: '../images/tree/page.gif',
+		node				: '${pageContext.request.contextPath}/images/tree/page.gif',
 
-		empty				: '../images/tree/empty.gif',
+		empty				: '${pageContext.request.contextPath}/images/tree/empty.gif',
 
-		line				: '../images/tree/line.gif',
+		line				: '${pageContext.request.contextPath}/images/tree/line.gif',
 
-		join				: '../images/tree/join.gif',
+		join				: '${pageContext.request.contextPath}/images/tree/join.gif',
 
-		joinBottom	: '../images/tree/joinbottom.gif',
+		joinBottom	: '${pageContext.request.contextPath}/images/tree/joinbottom.gif',
 
-		plus				: '../images/tree/plus.gif',
+		plus				: '${pageContext.request.contextPath}/images/tree/plus.gif',
 
-		plusBottom	: '../images/tree/plusbottom.gif',
+		plusBottom	: '${pageContext.request.contextPath}/images/tree/plusbottom.gif',
 
-		minus				: '../images/tree/minus.gif',
+		minus				: '${pageContext.request.contextPath}/images/tree/minus.gif',
 
-		minusBottom	: '../images/tree/minusbottom.gif',
+		minusBottom	: '${pageContext.request.contextPath}/images/tree/minusbottom.gif',
 
-		nlPlus			: '../images/tree/nolines_plus.gif',
+		nlPlus			: '${pageContext.request.contextPath}/images/tree/nolines_plus.gif',
 
-		nlMinus			: '../images/tree/nolines_minus.gif'
+		nlMinus			: '${pageContext.request.contextPath}/images/tree/nolines_minus.gif'
 
 	};
 

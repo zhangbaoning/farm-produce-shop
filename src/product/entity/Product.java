@@ -21,6 +21,20 @@ public class Product {
     Categorysecond categorysecond;
     private Set<Orderitem> orderitems; //和中间表一对多
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "pid=" + pid +
+                ", pname='" + pname + '\'' +
+                ", marketPrice=" + marketPrice +
+                ", shopPrice=" + shopPrice +
+                ", image='" + image + '\'' +
+                ", pdesc='" + pdesc + '\'' +
+                ", isHot=" + isHot +
+                ", pdate=" + pdate +
+                '}';
+    }
+
     public Set<Orderitem> getOrderitems() {
         return orderitems;
     }

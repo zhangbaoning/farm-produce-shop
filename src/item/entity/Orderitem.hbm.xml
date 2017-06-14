@@ -9,6 +9,6 @@
         <property name="count" column="count"/>
         <property name="subtotal" column="subtotal"/>
         <many-to-one lazy="false" cascade="save-update" name="product" column="pid" class="product.entity.Product"/>
-        <many-to-one lazy="false" cascade="save-update" name="orders" column="oid" class="order.entity.Orders"/>
+        <many-to-one  lazy="false" cascade="save-update" name="orders" column="oid" class="order.entity.Orders"/>
     </class>
 </hibernate-mapping>

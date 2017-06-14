@@ -52,6 +52,8 @@
         <action name="order_*" method="{1}" class="oderAction">
             <result name="orderPage">/WEB-INF/jsp/orderPage.jsp</result>
             <result type="redirect" name="loginPage">user_loginPage.action</result>
+            <result name="adminListPage">/WEB-INF/jsp/admin/order/list.jsp</result>
+            <result name="adminOrderListById">/WEB-INF/jsp/admin/order/orderItem.jsp</result>
 
         </action>
         <!--管理员-->

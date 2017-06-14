@@ -81,14 +81,14 @@
             商品金额: <strong id="effectivePrice">￥<s:property value="#session.cart.cart_total"/> </strong>
         </div>
         <form id="orderForm" action="./order_payOrder.action" method="post">
-            <input type="hidden" name="order.oid" value="order"/>
+            <input type="hidden" name="oid" value="order"/>
             <div class="span24">
                 <p>
-                    收货地址：<input name="order.user.addr" type="text" value="<s:property value="#session.user.addr"/> " style="width:350px" />
+                    收货地址：<input name="addr" type="text" value="<s:property value="#session.user.addr"/> " style="width:350px" />
                     <br />
                     收货人&nbsp;&nbsp;&nbsp;：<input name="order.user.username" type="text" value="<s:property value="#session.user.username"/> " style="width:150px" />
                     <br />
-                    联系方式：<input name="order.user.phone" type="text"value="<s:property value="#session.user.phone"/>" style="width:150px" />
+                    联系方式：<input name="phone" type="text"value="<s:property value="#session.user.phone"/>" style="width:150px" />
 
                 </p>
                 <hr />

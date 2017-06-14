@@ -98,6 +98,7 @@
     </bean>
     <bean id="orderService" class="order.service.OrderService">
         <property name="itemDao" ref="itemDao"/>
+        <property name="orderDao" ref="orderDao"/>
     </bean>
         <!--管理员-->
     <bean id="adminService" class="admin.service.AdminService">
@@ -124,7 +125,11 @@
     <bean id="adminDao" class="admin.dao.AdminDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+        <!--二级分类-->
     <bean id="categorysecondDao" class="category.dao.CategorysecondDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="orderDao" class="order.dao.OrderDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">

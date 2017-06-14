@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s" %>
 <table width="100%">
-	<s:iterator var="orderItem" value="list">
+	<s:iterator var="orderItem" value="product_list">
 	<tr>
 		<td><img width="40" height="45" src="${ pageContext.request.contextPath }/<s:property value="#orderItem.product.image"/>"></td>
 		<td><s:property value="#orderItem.product.pname"/></td>

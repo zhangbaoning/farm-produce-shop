@@ -23,7 +23,7 @@
 						}
 					}
 					// 3.打开连接
-					xhr.open("GET","${pageContext.request.contextPath}/adminOrder_findOrderItem.action?oid="+oid+"&time="+new Date().getTime(),true);
+					xhr.open("GET","${pageContext.request.contextPath}/order_adminOrderListById.action?oid="+oid+"&time="+new Date().getTime(),true);
 					// 4.发送
 					xhr.send(null);
 					but.value = "关闭";
